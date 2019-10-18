@@ -1,0 +1,17 @@
+@mixin btn-click($color) {
+    background-color: $color;
+
+    &:hover,
+    &[disabled] {
+        background-color: darken($color, 10%);
+    }
+
+    &[disabled] {
+        cursor: default;
+    }
+
+    &:active {
+        transform: translate(3px, 4px);
+        background-color: darken($color, 10%);
+    }
+}
