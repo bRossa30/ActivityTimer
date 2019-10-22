@@ -3,3 +3,12 @@
 @import '/base/base';
 @import '/buttons';
 @import '/clock';
+@import '/activities';
+
+li.active {
+    background: red;
+}
+
+.inactive {
+    pointer-events: none
+}

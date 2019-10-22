@@ -6,8 +6,8 @@
     font-size: $m-size;
     font-weight: bold;
     margin: 10px;
-    width: 100px;
-    height: 50px;
+    width: 2*$btn-height;
+    height: $btn-height;
     text-transform: uppercase;
     box-shadow: 3px 4px 3px 2px rgba(0, 0, 0, 0.75);
     transition: all .3s;

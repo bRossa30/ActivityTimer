@@ -10,7 +10,17 @@
 
 <body>
     <div class="wrapper">
-        <div class="clock__wrapper">
+        <section class="activities">
+            <button class="btn activities__show-form">+</button>
+            <form action="" class="activities__form hidden">
+                <input type="text" name="activityName">
+                <input type="submit" value="add activity">
+                <input type="reset" value="cancel">
+            </form>
+            <ul class="activities__list"></ul>
+        </section>
+        <section class="clock__wrapper">
+            <h3 class="activitiy-title"></h3>
             <p class="clock">00:00:00</p>
             <div class="clock__controls">
                 <button class="btn clock__controls--start">start</button>
@@ -18,7 +28,7 @@
                 <button class="btn clock__controls--pause " disabled>pause</button>
                 <button class="btn clock__controls--stop" disabled>stop</button>
             </div>
-        </div>
+        </section>
     </div>
     <script src="./scripts/bundle.js"></script>
 </body>
