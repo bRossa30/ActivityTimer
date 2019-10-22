@@ -1,4 +1,5 @@
 import uuidv4 from "uuidv4";
+import { showPopup } from './popup';
 
 let activities = [];
 
@@ -14,17 +15,18 @@ const getActivitiesFromLocalStorage = () => {
 
 const addActivity = (activityName) => {
     if (!activityName) {
-        alert('Can not add activity whith empty name');
+        showPopup('Can not add activity whith empty name', 'ok');
         return;
     };
     if (activities) {
         if (activities.some(activity => activity.activityName === activityName)) {
-            return alert('zadanie jest już na liście');
+            return showPopup('Activity is just on the list', 'ok');
         }
     }
     activities.push({
         id: uuidv4(),
-        activityName
+        activityName,
+        selected: false
     });
     saveActivityInLocalStorage();
 }
@@ -36,23 +38,40 @@ const removeActivity = (id) => {
         activities.splice(index, 1);
         saveActivityInLocalStorage();
     }
-
 }
 
-//before selecting activity you can't start the clock
-const selectActivity = (activity = null) => {
-    const currentLi = document.querySelector(`.activities__list li[id='${activity.id}']`);
+const disselectAllActivities = () => {
+    activities.map(a => {
+        if(a.selected===true) {
+            a.selected = false}
+        });
+    saveActivityInLocalStorage();
+    styleCurrentActivity();
+}
+
+const styleCurrentActivity = () => {
+    const currentActivity = getCurrentActivity();
     const previousLi = document.querySelector('.activities__list li.active');
-
     previousLi && previousLi.classList.remove('active');
-    currentLi && currentLi.classList.add('active');
+    if (currentActivity) {
+        const currentLi = document.querySelector(`.activities__list li[id='${currentActivity.id}']`);
+
+        currentLi && currentLi.classList.add('active');
+    }
 }
 
-const getCurrentActivity = () =>  document.querySelector('.activities__list li.active p');
+const selectActivity = (activity) => {
+    disselectAllActivities();
+    activity.selected = true;
+    saveActivityInLocalStorage();
+    styleCurrentActivity();
+}
+
+const getCurrentActivity = () =>  activities.find(a => a.selected === true);
 
 const getActivities = () => activities;
 
 activities = getActivitiesFromLocalStorage();
 
 
-export { addActivity, getActivities, removeActivity, selectActivity, getCurrentActivity }
+export { addActivity, getActivities, removeActivity, selectActivity, getCurrentActivity, disselectAllActivities }

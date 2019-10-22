@@ -1,4 +1,4 @@
-import { getActivities, removeActivity, selectActivity, getCurrentActivity } from './activities';
+import { getActivities, removeActivity, selectActivity, getCurrentActivity, disselectAllActivities } from './activities';
 
 const activities = getActivities();
 
@@ -19,13 +19,11 @@ const renderSingleActivityDOM = (activity) => {
     buttonRemove.textContent = 'x';
     singleActivityLi.addEventListener('click', () => {
         selectActivity(activity);
-        // renderCurrentActivityTitle();
     })
     buttonRemove.addEventListener('click', (e) => {
         e.stopPropagation(); //stop the action of eventListener at li node
         removeActivity(activity.id);
         renderActivities();
-        // renderCurrentActivityTitle();
     })
     singleActivityLi.appendChild(pActivityName);
     singleActivityLi.appendChild(buttonRemove);
@@ -38,7 +36,13 @@ const renderCurrentActivityTitle = () => {
     const currentActivity = getCurrentActivity();
 
     title.textContent = '';
-    currentActivity && (title.textContent = currentActivity.textContent); //if activity is not selected or were removed clear the title
+    currentActivity && (title.textContent = currentActivity.activityName); 
+}
+
+const handleClickActivitySection =() => {
+    const activitySection = document.querySelector('section.activities');
+
+    activitySection.addEventListener('click', disselectAllActivities, true);
 }
 
 const toggleDisableSelectActivitySection = () => {
@@ -47,4 +51,4 @@ const toggleDisableSelectActivitySection = () => {
     activitySection.classList.toggle('inactive')
 }
 
-export { renderActivities, renderCurrentActivityTitle, toggleDisableSelectActivitySection }
+export { renderActivities, renderCurrentActivityTitle, toggleDisableSelectActivitySection, handleClickActivitySection }
