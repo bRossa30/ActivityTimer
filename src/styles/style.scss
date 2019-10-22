@@ -2,14 +2,7 @@
 @import '/base/mixins';
 @import '/base/base';
 @import '/buttons';
+@import '/form';
+@import '/layout';
 @import '/clock';
-@import '/activities';
 @import '/popup';
-
-li.active {
-    background: red;
-}
-
-.inactive {
-    pointer-events: none
-}

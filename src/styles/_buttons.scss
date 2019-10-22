@@ -1,20 +1,46 @@
 .btn {
     border: none;
     border-radius: 2px;
-    color: $font-color-light;
+    color: $font-color--light;
     cursor: pointer;
     font-size: $m-size;
     font-weight: bold;
     margin: 10px;
-    width: 2*$btn-height;
-    height: $btn-height;
+
     text-transform: uppercase;
-    box-shadow: 3px 4px 3px 2px rgba(0, 0, 0, 0.75);
+    box-shadow: $shadow;
     transition: all .3s;
 
     &:focus {
         outline: none;
     }
 
+    &--large {
+        width: 2*$l-btn-height;
+        height: $l-btn-height;
+    }
+
+    &--small {
+        width: 2*$l-btn-height;
+        height: $s-btn-height;
+    }
+
+    &--submit {
+        @include btn-click($btn-start-bgc-color);
+    }
+
+    &--cancel {
+        @include btn-click($btn-stop-bgc-color);
+    }
+
+    &--remove {
+        align-self: flex-start;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        color: lighten($font-color--dark, 40%);
+        font-size: $xs-size;
+        margin-left: 15px;
+    }
 
 }

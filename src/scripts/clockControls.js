@@ -10,7 +10,7 @@ const btnStop = document.querySelector('.clock__controls--stop');
 
 btnStart.addEventListener('click', function () {
     if (!getCurrentActivity()) {
-        showPopup('please select activity', 'ok');
+        showPopup('Please select activity', 'ok');
         return;
     }  
     btnStart.disabled = true;

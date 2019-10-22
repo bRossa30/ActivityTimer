@@ -7,6 +7,7 @@ const activitiesForm = document.querySelector('.activities__form');
 btnActivityFormShow.addEventListener('click', () => {
     btnActivityFormShow.classList.toggle('hidden');
     activitiesForm.classList.toggle('hidden');
+    activitiesForm.activityName.focus();
 })
 
 activitiesForm.addEventListener('submit', e => {

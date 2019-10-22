@@ -8,3 +8,11 @@
 .hidden {
     display: none;
 }
+
+.invisible {
+    visibility: hidden;
+}
+
+.inactive {
+    pointer-events: none
+}

@@ -1,14 +1,14 @@
-const showPopup = (msg, btn1 = {}, btn2 = {}) => {
+const showPopup = (msg, btn) => {
     const popup = document.querySelector('.popup__wrapper');
     const popupTitle = document.querySelector('.popup__title');
-    const btnSubmit = document.querySelector('.btn--submit');
+    const btnSubmit = document.querySelector('.popup>.btn--submit');
 
     popup.classList.toggle('hidden');
-    popup.classList.toggle('wrapper--flex');
+    popup.classList.toggle('popup__wrapper--flex');
 
     popupTitle.textContent = msg;
-    if (btn1) {
-        btnSubmit.textContent = btn1.text;
+    if (btn) {
+        btnSubmit.textContent = btn;
         btnSubmit.classList.remove('hidden');
         btnSubmit.addEventListener('click', () => {
         closePopup()
@@ -18,11 +18,11 @@ const showPopup = (msg, btn1 = {}, btn2 = {}) => {
 
 const closePopup = () => {
     const popup = document.querySelector('.popup__wrapper');
-    const btnSubmit = document.querySelector('.btn--submit');
+    const btnSubmit = document.querySelector('.popup>.btn--submit');
    
     !btnSubmit.classList.contains('hidden') && btnSubmit.classList.add('hidden');
     popup.classList.add('hidden');
-    popup.classList.remove('wrapper--flex');
+    popup.classList.remove('popup__wrapper--flex');
 }
 
 export { showPopup }

@@ -16,7 +16,15 @@ const renderSingleActivityDOM = (activity) => {
 
     singleActivityLi.setAttribute('id', activity.id);
     pActivityName.textContent = activity.activityName;
-    buttonRemove.textContent = 'x';
+    buttonRemove.textContent = 'delete';
+    buttonRemove.classList.add('btn--remove');
+    buttonRemove.classList.add('invisible');
+    singleActivityLi.addEventListener('mouseover', () => {
+        buttonRemove.classList.remove('invisible');
+    })
+    singleActivityLi.addEventListener('mouseout', () => {
+        buttonRemove.classList.add('invisible');
+    })
     singleActivityLi.addEventListener('click', () => {
         selectActivity(activity);
     })

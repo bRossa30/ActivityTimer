@@ -1,20 +1,33 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fira+Code|Lato|Montserrat:400|Open+Sans|Karla&display=swap');
 
-$f-family-basic: 'Lato',
+$f-family-basic: 'Open Sans',
 sans-serif;
+$f-family-clock: 'Karla',
+monospace;
+$f-family-list: 'Montserrat',
+sans-serif;
+$f-family-title: 'Fira Code',
+monospace;
 
 $bgc-color--dark: #363637;
-$bgc-color--light: #E3E8F1;
+$bgc-color--light: #e9e9e9;
 $btn-start-bgc-color: #28A745;
 $btn-pause-bgc-color: #FFC107;
 $btn-stop-bgc-color: #DC3545;
 $btn-reset-bgc-color: #17A2B8;
-$font-color-light: #e7e7e7;
-$font-color-dark: #363637;
+$font-color--light: #e7e7e7;
+$font-color--dark: #363637;
 
+$xs-size: 0.8rem;
 $s-size: 1rem;
 $m-size: 1.2rem;
-$l-size: 2.8rem;
+$l-size: 1.6rem;
 $xl-size: 3.6rem;
 
-$btn-height: 50px;
+$l-btn-height: 50px;
+$s-btn-height: 30px;
+
+$input-width: 200px;
+
+$shadow: 3px 4px 3px 2px rgba(0, 0, 0, 0.75);
+$text-shadow: 1px 1px rgba(0, 0, 0, 0.75);

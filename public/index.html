@@ -11,29 +11,30 @@
 <body>
     <div class="wrapper">
         <section class="activities">
-            <button class="btn activities__show-form">+</button>
-            <form action="" class="activities__form hidden">
-                <input type="text" name="activityName">
-                <input type="submit" value="add activity">
-                <input type="reset" value="cancel">
-            </form>
+            <div class="form__wrapper">
+                <button class="btn btn--large activities__show-form">+</button>
+                <form action="" class="activities__form hidden">
+                    <input type="text" name="activityName" autofocus>
+                    <input type="submit" value="add" class="btn btn--submit btn--small">
+                    <input type="reset" value="cancel" class="btn btn--cancel btn--small">
+                </form>
+            </div>
             <ul class="activities__list"></ul>
         </section>
         <section class="clock__wrapper">
             <h3 class="activitiy-title"></h3>
             <p class="clock">00:00:00</p>
             <div class="clock__controls">
-                <button class="btn clock__controls--start">start</button>
-                <button class="btn clock__controls--reset hidden">reset</button>
-                <button class="btn clock__controls--pause " disabled>pause</button>
-                <button class="btn clock__controls--stop" disabled>stop</button>
+                <button class="btn btn--large clock__controls--start">start</button>
+                <button class="btn btn--large clock__controls--reset hidden">reset</button>
+                <button class="btn btn--large clock__controls--pause " disabled>pause</button>
+                <button class="btn btn--large clock__controls--stop" disabled>stop</button>
             </div>
         </section>
         <section class="popup__wrapper hidden">
             <div class="popup">
                 <h4 class="popup__title"></h4>
-                <button class="btn btn--submit hidden"></button>
-                <button class="btn btn--cancel hidden"></button>
+                <button class="btn btn--small btn--submit hidden"></button>
             </div>
         </section>
     </div>
