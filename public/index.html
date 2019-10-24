@@ -10,33 +10,50 @@
 
 <body>
     <div class="wrapper">
-        <section class="activities">
+        <aside class="activities">
             <div class="form__wrapper">
                 <button class="btn btn--large activities__show-form">+</button>
                 <form action="" class="activities__form hidden">
-                    <input type="text" name="activityName" autofocus>
+                    <input type="text" class="input input--wide" name="activityName" autofocus>
                     <input type="submit" value="add" class="btn btn--submit btn--small">
                     <input type="reset" value="cancel" class="btn btn--cancel btn--small">
                 </form>
             </div>
             <ul class="activities__list"></ul>
-        </section>
-        <section class="clock__wrapper">
-            <h3 class="activitiy-title"></h3>
-            <p class="clock">00:00:00</p>
-            <div class="clock__controls">
-                <button class="btn btn--large clock__controls--start">start</button>
-                <button class="btn btn--large clock__controls--reset hidden">reset</button>
-                <button class="btn btn--large clock__controls--pause " disabled>pause</button>
-                <button class="btn btn--large clock__controls--stop" disabled>stop</button>
-            </div>
-        </section>
-        <section class="popup__wrapper hidden">
-            <div class="popup">
-                <h4 class="popup__title"></h4>
-                <button class="btn btn--small btn--submit hidden"></button>
-            </div>
-        </section>
+        </aside>
+        <main>
+            <section class="clock__wrapper">
+                <h3 class="activitiy-title"></h3>
+                <p class="clock">00:00:00</p>
+                <div class="clock__controls">
+                    <button class="btn btn--large clock__controls--start">start</button>
+                    <button class="btn btn--large clock__controls--reset hidden">reset</button>
+                    <button class="btn btn--large clock__controls--pause " disabled>pause</button>
+                    <button class="btn btn--large clock__controls--stop" disabled>stop</button>
+                </div>
+            </section>
+            <section class="history__wrapper">
+                <form class="history__filters">
+                    <select name="history__filters__datalist" class="input history__filters__datalist"
+                        placeholder="select activity">
+                    </select>
+                    <select name="history__filters__sortBy" class="input history__filters__sortBy">
+                        <option value="lastDate" selected>Last date</option>
+                        <option value="erliesDate">Erliest date</option>
+                        <option value="minTime">The shortest activity time</option>
+                        <option value="maxTime">The longest activity time</option>
+                    </select>
+                </form>
+                <ul class="history">
+                </ul>
+            </section>
+            <section class="popup__wrapper hidden">
+                <div class="popup">
+                    <h4 class="popup__title"></h4>
+                    <button class="btn btn--small btn--submit hidden"></button>
+                </div>
+            </section>
+        </main>
     </div>
     <script src="./scripts/bundle.js"></script>
 </body>

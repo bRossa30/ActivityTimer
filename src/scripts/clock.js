@@ -36,4 +36,6 @@ const resetClock = () => {
     clock.textContent = "00:00:00";
 }
 
-export { startClock, pauseClock, stopClock, resetClock }
+const getTime = () => clock.textContent;
+
+export { startClock, pauseClock, stopClock, resetClock, getTime }

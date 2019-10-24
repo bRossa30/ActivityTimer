@@ -1,12 +1,24 @@
 import { getActivities, removeActivity, selectActivity, getCurrentActivity, disselectAllActivities } from './activities';
+import { defaultFilterHistorySelect, renderActivityInHistoryfilters } from './renderHistory';
+
 
 const activities = getActivities();
 
 const renderActivities = () => {
     const activitiesList = document.querySelector('.activities__list');
+    const historyFilterDatalist = document.querySelector('.history__filters__datalist');
 
     activitiesList.textContent = "";
-    activities && activities.forEach(activity => activitiesList.appendChild(renderSingleActivityDOM(activity)));
+
+    //insert activities to select filter in history registry
+    historyFilterDatalist.textContent = "";
+    historyFilterDatalist.appendChild(defaultFilterHistorySelect());
+
+    activities && activities.forEach(activity => {
+        activitiesList.appendChild(renderSingleActivityDOM(activity));
+        historyFilterDatalist.appendChild(renderActivityInHistoryfilters(activity));
+    });
+
 }
 
 const renderSingleActivityDOM = (activity) => {
@@ -44,19 +56,22 @@ const renderCurrentActivityTitle = () => {
     const currentActivity = getCurrentActivity();
 
     title.textContent = '';
-    currentActivity && (title.textContent = currentActivity.activityName); 
+    currentActivity && (title.textContent = currentActivity.activityName);
 }
 
-const handleClickActivitySection =() => {
-    const activitySection = document.querySelector('section.activities');
+const handleClickActivitySection = () => {
+    const activitySection = document.querySelector('.activities');
 
     activitySection.addEventListener('click', disselectAllActivities, true);
 }
 
+//to disable selecting another activity when click is working
 const toggleDisableSelectActivitySection = () => {
-    const activitySection = document.querySelector('section.activities');
+    const activitySection = document.querySelector('.activities');
 
     activitySection.classList.toggle('inactive')
 }
+
+
 
 export { renderActivities, renderCurrentActivityTitle, toggleDisableSelectActivitySection, handleClickActivitySection }

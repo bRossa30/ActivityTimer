@@ -1,6 +1,6 @@
 .wrapper {
     display: flex;
-    min-height: 100vh;
+    height: 100vh;
 }
 
 .activities {
@@ -12,6 +12,7 @@
     padding: 20px;
     background-color: $bgc-color--light;
     z-index: 1;
+    overflow-y: auto;
 
     &__list {
         flex-basis: 100%;
@@ -45,11 +46,26 @@
     justify-content: flex-end;
 }
 
-.clock__wrapper {
+main {
+    display: flex;
+    flex-direction: column;
     flex-basis: 70%;
+    height: 100vh;
+}
+
+.clock__wrapper {
     background-color: $bgc-color--dark;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    flex-basis: 50%;
+}
+
+
+
+.history__wrapper {
+    flex-basis: 50%;
+    overflow-y: auto;
+
 }

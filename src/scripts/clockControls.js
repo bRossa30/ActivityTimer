@@ -1,7 +1,10 @@
 import { startClock, pauseClock, stopClock, resetClock } from './clock';
 import { getCurrentActivity, disselectAllActivities } from './activities';
 import { toggleDisableSelectActivitySection, renderCurrentActivityTitle } from './render'
+import { renderHistory } from './renderHistory';
 import { showPopup } from './popup';
+import { registerActivityInHistory } from './history';
+
 
 const btnStart = document.querySelector('.clock__controls--start');
 const btnReset = document.querySelector('.clock__controls--reset');
@@ -12,7 +15,7 @@ btnStart.addEventListener('click', function () {
     if (!getCurrentActivity()) {
         showPopup('Please select activity', 'ok');
         return;
-    }  
+    }
     btnStart.disabled = true;
     btnPause.disabled = false;
     btnStop.disabled = false;
@@ -45,4 +48,6 @@ btnStop.addEventListener('click', () => {
     btnPause.disabled = true;
     btnStart.classList.toggle('hidden');
     btnReset.classList.toggle('hidden');
+    registerActivityInHistory();
+    renderHistory();
 });
