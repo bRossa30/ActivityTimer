@@ -1,22 +1,17 @@
 import { getActivities, removeActivity, selectActivity, getCurrentActivity, disselectAllActivities } from './activities';
-import { defaultFilterHistorySelect, renderActivityInHistoryfilters } from './renderHistory';
+
 
 
 const activities = getActivities();
 
 const renderActivities = () => {
     const activitiesList = document.querySelector('.activities__list');
-    const historyFilterDatalist = document.querySelector('.history__filters__datalist');
+
 
     activitiesList.textContent = "";
 
-    //insert activities to select filter in history registry
-    historyFilterDatalist.textContent = "";
-    historyFilterDatalist.appendChild(defaultFilterHistorySelect());
-
     activities && activities.forEach(activity => {
         activitiesList.appendChild(renderSingleActivityDOM(activity));
-        historyFilterDatalist.appendChild(renderActivityInHistoryfilters(activity));
     });
 
 }

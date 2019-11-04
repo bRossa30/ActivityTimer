@@ -3,6 +3,7 @@ import { renderHistory } from './renderHistory';
 
 const filters = getFilters();
 
+
 document.querySelector('.history__filters__datalist').addEventListener('change', (e) => {
     const value = e.target.value;
     insertFilters('activityName', value);
@@ -13,5 +14,4 @@ document.querySelector('.history__filters__sortBy').addEventListener('change', (
     const value = e.target.value;
     insertFilters('sortBy', value);
     renderHistory();
-    console.log(filters);
 })

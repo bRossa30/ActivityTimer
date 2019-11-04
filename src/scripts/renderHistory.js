@@ -1,9 +1,50 @@
 import { getHistory } from './history';
 import { getFilters } from './historyFilters';
 import moment from 'moment';
+import { getActivities } from './activities';
 
 const history = getHistory();
 const filters = getFilters();
+const activities = getActivities();
+
+
+const renderHistoryFilters = () => {
+    //set activity name filter options
+    const historyFilterDatalist = document.querySelector('.history__filters__datalist');
+    let activitiesInhistory = [];
+
+    historyFilterDatalist.textContent = "";
+    historyFilterDatalist.appendChild(defaultActivityNameFiltert());
+
+    //taking activity names from activities saved in history
+    activitiesInhistory = history.map(h => h.activity);
+
+    //taking activity names from current activity list
+    activitiesInhistory = activitiesInhistory.concat(activities.map(a => a.activityName));
+
+    //removing duplicates 
+    activitiesInhistory = [... new Set(activitiesInhistory)];
+
+    activitiesInhistory.forEach(activity => historyFilterDatalist
+        .appendChild(renderSingleActivityInHistoryfilters(activity)))
+
+}
+
+const defaultActivityNameFiltert = () => {
+    const option = document.createElement('option');
+    option.setAttribute('value', 'Select all');
+    option.textContent = 'Select all';
+    return option;
+}
+
+const renderSingleActivityInHistoryfilters = (activityName) => {
+
+    const option = document.createElement('option');
+    option.setAttribute('value', activityName);
+    option.textContent = activityName;
+
+    return option;
+}
 
 const filterHistory = () => {
     if (filters.activityName === 'Select all') return history;
@@ -25,7 +66,6 @@ const sortHistory = (table) => {
         case 'maxTime':
             table.sort((a, b) => a.activityTimeInSec < b.activityTimeInSec ? 1 : -1)
             break;
-
     }
 }
 
@@ -56,20 +96,4 @@ const renderSingleHistoryElementDOM = ({ date, activity, activityTimeInSec }) =>
     return li;
 }
 
-const defaultFilterHistorySelect = () => {
-    const option = document.createElement('option');
-    option.setAttribute('value', 'Select all');
-    option.textContent = 'Select all';
-    return option;
-}
-
-const renderActivityInHistoryfilters = ({ activityName }) => {
-
-    const option = document.createElement('option');
-    option.setAttribute('value', activityName);
-    option.textContent = activityName;
-
-    return option;
-}
-
-export { renderHistory, renderActivityInHistoryfilters, defaultFilterHistorySelect }
+export { renderHistory, renderHistoryFilters }
