@@ -1,6 +1,6 @@
 const filters = {
     activityName: "Select all",
-    date: '',
+    startDate: '',
     time: '',
     sortBy: 'lastDate'
 }

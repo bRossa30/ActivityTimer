@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "@babel/plugin-transform-block-scoping": "^7.6.3",
+    "tiny-date-picker": "^3.2.8",
     "uuidv4": "^5.0.1"
   }
 }

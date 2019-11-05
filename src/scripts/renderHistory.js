@@ -14,7 +14,7 @@ const renderHistoryFilters = () => {
     let activitiesInhistory = [];
 
     historyFilterDatalist.textContent = "";
-    historyFilterDatalist.appendChild(defaultActivityNameFiltert());
+    historyFilterDatalist.appendChild(defaultActivityNameFilter());
 
     //taking activity names from activities saved in history
     activitiesInhistory = history.map(h => h.activity);
@@ -30,7 +30,7 @@ const renderHistoryFilters = () => {
 
 }
 
-const defaultActivityNameFiltert = () => {
+const defaultActivityNameFilter = () => {
     const option = document.createElement('option');
     option.setAttribute('value', 'Select all');
     option.textContent = 'Select all';
@@ -46,9 +46,15 @@ const renderSingleActivityInHistoryfilters = (activityName) => {
     return option;
 }
 
-const filterHistory = () => {
+const filterHistoryByActivity = (history) => {
+
     if (filters.activityName === 'Select all') return history;
     return history.filter(h => h.activity === filters.activityName);
+}
+
+const filterHistoryByDate = (history) => {
+    if (filters.startDate === '' || isNaN(filters.startDate)) return history;
+    return history.filter(h => h.date > filters.startDate);
 }
 
 const sortHistory = (table) => {
@@ -71,7 +77,7 @@ const sortHistory = (table) => {
 
 const renderHistory = () => {
     const historyList = document.querySelector('ul.history');
-    const filteredHistory = filterHistory();
+    const filteredHistory = filterHistoryByDate(filterHistoryByActivity(history));
 
     sortHistory(filteredHistory);
     historyList.textContent = "";
