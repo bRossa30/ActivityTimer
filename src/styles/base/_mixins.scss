@@ -1,7 +1,11 @@
 @mixin btn-click($color) {
     background-color: $color;
+    transition: .3s ease;
 
-    &:hover,
+    &:hover {
+        background-color: lighten($color, 5%);
+    }
+
     &[disabled] {
         background-color: darken($color, 10%);
     }
@@ -12,6 +16,6 @@
 
     &:active {
         transform: translate(3px, 4px);
-        background-color: darken($color, 10%);
+        background-color: lighten($color, 5%);
     }
 }

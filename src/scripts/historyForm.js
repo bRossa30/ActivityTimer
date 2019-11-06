@@ -19,6 +19,12 @@ document.querySelector('.history__filters__sortBy').addEventListener('change', (
     renderHistory();
 })
 
+document.querySelector('.history-title__box').addEventListener('click', () => {
+    console.log('start')
+    document.querySelector('.history__wrapper').classList.toggle('history__wrapper--collapse');
+    document.querySelector('.clock__wrapper').classList.toggle('history__wrapper--collapse');
+    document.querySelector('.history__box').classList.toggle('hidden');
+})
 
 TinyDatePicker('.date-picker-start', {
     // mode: 'dp-below'

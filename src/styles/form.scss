@@ -1,6 +1,10 @@
 .input {
     height: $l-btn-height;
     font-size: $s-size;
+    background-color: $bgc-color--input;
+    color: $font-color--light;
+    border: none;
+    outline: none;
 
     &[type="text"] {
         padding: 15px;
@@ -10,6 +14,10 @@
     &--wide {
         width: 100%;
     }
+}
+
+select {
+    padding-left: 15px;
 }
 
 .activities__show-form {

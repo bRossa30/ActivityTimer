@@ -1,7 +1,8 @@
 import './clockControls';
 import './activitiesForm';
 import './historyForm';
-import '../styles/style.scss'
+import '../../node_modules/@fortawesome/fontawesome-free/js/all';
+import '../styles/style.scss';
 import { renderActivities, handleClickActivitySection } from './render';
 import { renderHistory, renderHistoryFilters } from './renderHistory';
 

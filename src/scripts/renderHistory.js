@@ -76,7 +76,7 @@ const sortHistory = (table) => {
 }
 
 const renderHistory = () => {
-    const historyList = document.querySelector('ul.history');
+    const historyList = document.querySelector('.history__list');
     const filteredHistory = filterHistoryByDate(filterHistoryByActivity(history));
 
     sortHistory(filteredHistory);
@@ -93,8 +93,11 @@ const renderSingleHistoryElementDOM = ({ date, activity, activityTimeInSec }) =>
     const activityDate = moment(date);
     const time = moment.duration(activityTimeInSec, 'seconds').asMilliseconds();
     pDate.textContent = activityDate.format("YYYY-MM-DD HH:mm:SS");
+    pDate.classList.add('history__activity_date');
     pActivityName.textContent = activity;
+    pActivityName.classList.add('history__activity_name');
     pTime.textContent = moment.utc(time).format("HH:mm:ss")
+    pTime.classList.add('history__activity_time')
     li.appendChild(pDate);
     li.appendChild(pActivityName);
     li.appendChild(pTime);

@@ -33,21 +33,36 @@
                 </div>
             </section>
             <section class="history__wrapper">
-                <form class="history__filters">
-                    <select name="history__filters__datalist" class="input history__filters__datalist"
-                        placeholder="select activity">
-                    </select>
-                    <input type="text" class="input date-picker-start" placeholder="Min date">
-                    <label for=""> Sort by:</label>
-                    <select name="history__filters__sortBy" class="input history__filters__sortBy">
-                        <option value="lastDate" selected>Last date</option>
-                        <option value="erliesDate">Erliest date</option>
-                        <option value="minTime">The shortest activity time</option>
-                        <option value="maxTime">The longest activity time</option>
-                    </select>
-                </form>
-                <ul class="history">
-                </ul>
+                <div class="history-title__box">history <i class="fas fa-angle-down"></i></div>
+                <div class="history__box">
+                    <form class="history__filters__form">
+                        <div class="history__filters">
+                            <p class="history__filters__title">Filter:</p>
+                            <select name="history__filters__datalist" class="input history__filters__datalist"
+                                placeholder="select activity">
+                            </select>
+                            <input type="text" class="input date-picker-start" placeholder="Min date">
+                        </div>
+                        <div class="history__filters--sort">
+                            <p class="history__filters__title">Sort by:</p>
+                            <select name="history__filters__sortBy" class="input history__filters__sortBy">
+                                <option value="lastDate" selected>Last date</option>
+                                <option value="erliesDate">Erliest date</option>
+                                <option value="minTime">The shortest activity time</option>
+                                <option value="maxTime">The longest activity time</option>
+                            </select>
+                        </div>
+
+                    </form>
+                    <div class="history__list--wrapper">
+                        <ul class="history__list__title">
+                            <li class="history__list__title--date">Date</li>
+                            <li class="history__list__title--name">Activity</li>
+                            <li class="history__list__title--time">Duration</li>
+                        </ul>
+                        <ul class="history__list"></ul>
+                    </div>
+                </div>
             </section>
             <section class="popup__wrapper hidden">
                 <div class="popup">
