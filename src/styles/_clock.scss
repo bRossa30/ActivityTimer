@@ -27,10 +27,36 @@
     }
 }
 
+.clock__wrapper {
+    background-color: $bgc-color--dark;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    transition: flex-basis .3s;
+}
+
+.clock__wrapper.history__wrapper--collapse {
+    flex-basis: 99%;
+}
+
 .activitiy-title {
     color: $font-color--highlight;
     font-size: $l-size;
     font-family: $f-family-title;
     font-style: italic;
     text-shadow: $text-shadow;
+}
+
+.clock__resize {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: $bgc-color--light;
+    height: 2px;
+    width: 100%;
+    cursor: n-resize;
 }

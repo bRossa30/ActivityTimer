@@ -20,6 +20,10 @@ select {
     padding-left: 15px;
 }
 
+::placeholder {
+    color: $font-color--light;
+}
+
 .activities__show-form {
     @include btn-click($btn-start-bgc-color);
     width: $l-btn-height;

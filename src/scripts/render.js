@@ -1,4 +1,5 @@
 import { getActivities, removeActivity, selectActivity, getCurrentActivity, disselectAllActivities } from './activities';
+import { renderHistoryFilters } from './renderHistory'
 
 
 
@@ -39,6 +40,7 @@ const renderSingleActivityDOM = (activity) => {
         e.stopPropagation(); //stop the action of eventListener at li node
         removeActivity(activity.id);
         renderActivities();
+        renderHistoryFilters();
     })
     singleActivityLi.appendChild(pActivityName);
     singleActivityLi.appendChild(buttonRemove);

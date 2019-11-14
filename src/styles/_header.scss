@@ -1,0 +1,17 @@
+.header {
+    width: 100vw;
+    height: $header-height;
+    line-height: 50px;
+    padding-right: 100px;
+    background-color: #008481;
+    color: $font-color--light;
+    text-transform: uppercase;
+    font-size: $l-size;
+    font-family: 'Permanent Marker', cursive;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-align: right;
+    z-index: 99;
+    box-shadow: $shadow;
+
+}

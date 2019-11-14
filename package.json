@@ -28,6 +28,7 @@
   "dependencies": {
     "@babel/plugin-transform-block-scoping": "^7.6.3",
     "@fortawesome/fontawesome-free": "^5.11.2",
+    "simplebar": "^5.0.6",
     "tiny-date-picker": "^3.2.8",
     "uuidv4": "^5.0.1"
   }

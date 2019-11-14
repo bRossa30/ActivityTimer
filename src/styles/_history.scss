@@ -1,0 +1,93 @@
+.history {
+    &__wrapper {
+        position: relative;
+        height: 300px;
+        overflow-y: auto;
+        background-color: #191E2A;
+        color: $font-color--light;
+        padding: 40px;
+
+        &--collapse {
+            height: 40px;
+            padding: 0;
+            overflow: hidden;
+        }
+    }
+
+    &-title__box {
+        position: absolute;
+        top: 0;
+        right: 12px;
+        text-transform: uppercase;
+        font-size: $xs-size;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 20px;
+        background-color: $btn-reset-bgc-color;
+        color: $font-color--light;
+    }
+
+    &__filters {
+        margin-right: 20px;
+
+        &__form {
+            margin: 20px 0;
+            display: flex;
+        }
+
+        &__title {
+            color: $font-color--highlight;
+            margin-bottom: 5px;
+        }
+    }
+
+    &__activity_name {
+        flex-basis: 70%;
+
+    }
+
+    &__activity_date {
+        font-size: $xs-size;
+        font-style: italic;
+        color: #88919C;
+        flex-basis: 30%;
+    }
+
+    &__list {
+        list-style: none;
+        display: flex;
+        max-width: 700px;
+        flex-direction: column;
+
+        li {
+            background-color: $bgc-color--light;
+            display: flex;
+            padding: 20px;
+            margin-bottom: 5px;
+        }
+
+        &__title {
+            background-color: $bgc-color--dark;
+            color: $font-color--highlight;
+            list-style: none;
+            max-width: 700px;
+            display: flex;
+            padding: 10px 20px;
+            margin-bottom: 5px;
+
+            &--date {
+                flex-basis: 30%
+            }
+
+            &--name {
+                flex-basis: 70%
+            }
+        }
+    }
+}
+
+.fa-angle-down {
+    font-size: $m-size;
+    margin-left: 20px;
+    cursor: pointer;
+}

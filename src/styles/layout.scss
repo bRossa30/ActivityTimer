@@ -1,24 +1,58 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    // overflow: hidden;
+}
+
 .wrapper {
     display: flex;
-    height: 100vh;
+    flex-shrink: 1;
+
+    flex-grow: 1;
+    height: calc(100vh - #{$header-height});
 }
 
 .activities {
-    flex-basis: 30%;
+    position: relative;
+    // flex-basis: 30%;
+    width: 450px;
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-    box-shadow: $shadow;
-    padding: 20px;
+    // box-shadow: $shadow;
+    padding: 20px 30px 20px 20px;
     background-color: $bgc-color--light;
     z-index: 1;
-    overflow-y: auto;
+    // overflow: hidden;
+    flex-shrink: 1;
+
+    // overflow: auto;
+    // overflow-x: hidden;
+
+    transition: .3s;
+
+    &--collapse {
+        margin-left: -420px;
+        overflow: hidden;
+    }
 
     &__list {
-        flex-basis: 100%;
         font-family: $f-family-list;
         list-style: none;
         margin: 20px;
+        flex-shrink: 1;
+
+
+        &-box {
+            flex-basis: 100%;
+            margin-right: 20px;
+            overflow: auto;
+            overflow-x: hidden;
+            flex-shrink: 1;
+
+        }
 
         li {
             border-radius: 2px;
@@ -40,6 +74,26 @@
     }
 }
 
+.aside__title {
+    position: absolute;
+    top: 40%;
+    right: -50px;
+    height: 30px;
+    width: 130px;
+    line-height: 30px;
+    padding: 0 15px;
+    transform: rotate(90deg);
+    background-color: $btn-reset-bgc-color;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: $xs-size;
+    color: $font-color--light;
+
+    &--collapse {
+        transform: rotate(-90deg);
+    }
+}
+
 .form__wrapper {
     display: flex;
     flex-basis: 100%;
@@ -49,118 +103,6 @@
 main {
     display: flex;
     flex-direction: column;
-    flex-basis: 70%;
-    height: 100vh;
-}
-
-.clock__wrapper {
-    background-color: $bgc-color--dark;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-basis: 50%;
-    transition: flex-basis .3s;
-}
-
-.clock__wrapper.history__wrapper--collapse {
-    flex-basis: 99%;
-}
-
-
-
-.history {
-    &__wrapper {
-        position: relative;
-        flex-basis: 50%;
-        overflow-y: auto;
-        background-color: #191E2A;
-        color: $font-color--light;
-        padding: 40px;
-        border-top: 1px solid $bgc-color--light;
-        transition: flex-basis .3s;
-
-        &--collapse {
-            flex-basis: 5%;
-            padding: 0;
-            overflow: hidden;
-        }
-    }
-
-    &-title__box {
-        position: absolute;
-        top: 0;
-        right: 0;
-        text-transform: uppercase;
-        font-size: $xs-size;
-        height: 40px;
-        line-height: 40px;
-        padding: 0 20px;
-        background-color: $btn-reset-bgc-color;
-        color: $font-color--light;
-    }
-
-    &__filters {
-        margin-right: 20px;
-
-        &__form {
-            margin: 20px 0;
-            display: flex;
-        }
-
-        &__title {
-            color: $font-color--highlight;
-            margin-bottom: 5px;
-        }
-    }
-
-    &__activity_name {
-        flex-basis: 70%;
-
-    }
-
-    &__activity_date {
-        font-size: $xs-size;
-        font-style: italic;
-        color: #88919C;
-        flex-basis: 30%;
-    }
-
-    &__list {
-        list-style: none;
-        display: flex;
-        max-width: 700px;
-        flex-direction: column;
-
-        li {
-            background-color: $bgc-color--light;
-            display: flex;
-            padding: 20px;
-            margin-bottom: 5px;
-        }
-
-        &__title {
-            background-color: $bgc-color--dark;
-            color: $font-color--highlight;
-            list-style: none;
-            max-width: 700px;
-            display: flex;
-            padding: 10px 20px;
-            margin-bottom: 5px;
-
-            &--date {
-                flex-basis: 30%
-            }
-
-            &--name {
-                flex-basis: 70%
-            }
-        }
-    }
-}
-
-.fa-angle-down {
-    font-size: $m-size;
-    margin-left: 20px;
-    cursor: pointer;
+    // flex-basis: 70%;
+    flex-grow: 1;
 }

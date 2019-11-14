@@ -6,11 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ActivityTimer</title>
+
 </head>
 
 <body>
+    <header class="header">
+        <div class="header__title">Activity timer</div>
+    </header>
     <div class="wrapper">
         <aside class="activities">
+            <div class="aside__title">activities <i class="fas fa-angle-down"></i></div>
             <div class="form__wrapper">
                 <button class="btn btn--large activities__show-form">+</button>
                 <form action="" class="activities__form hidden">
@@ -19,7 +24,9 @@
                     <input type="reset" value="cancel" class="btn btn--cancel btn--small">
                 </form>
             </div>
-            <ul class="activities__list"></ul>
+            <div class="activities__list-box ">
+                <ul class="activities__list"></ul>
+            </div>
         </aside>
         <main>
             <section class="clock__wrapper">
@@ -31,8 +38,10 @@
                     <button class="btn btn--large clock__controls--pause " disabled>pause</button>
                     <button class="btn btn--large clock__controls--stop" disabled>stop</button>
                 </div>
+                <div class="clock__resize"></div>
             </section>
             <section class="history__wrapper">
+                <div data-simplebar></div>
                 <div class="history-title__box">history <i class="fas fa-angle-down"></i></div>
                 <div class="history__box">
                     <form class="history__filters__form">
