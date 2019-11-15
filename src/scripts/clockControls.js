@@ -51,3 +51,8 @@ btnStop.addEventListener('click', () => {
     registerActivityInHistory();
     renderHistory();
 });
+
+window.addEventListener('beforeunload', () => {
+    stopClock();
+    registerActivityInHistory();
+})
