@@ -1,0 +1,17 @@
+.popup {
+    background-color: $color-gray-1;
+    border-radius: 2px;
+    padding: $padding-s;
+    width: 40rem;
+    max-width: 100%;
+    box-shadow: $shadow;
+    text-align: center;
+
+    &__title {
+        font-family: $f-family-list;
+        font-weight: 400;
+        font-size: $size-m;
+        color: $color-white;
+        margin-bottom: 1.5rem;
+    }
+}

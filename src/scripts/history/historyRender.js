@@ -1,7 +1,7 @@
 import { getHistory } from './history';
 import { getFilters } from './historyFilters';
 import moment from 'moment';
-import { getActivities } from './activities';
+import { getActivities } from '../activities/activities';
 
 const history = getHistory();
 const filters = getFilters();
@@ -10,7 +10,7 @@ const activities = getActivities();
 
 const renderHistoryFilters = () => {
     //set activity name filter options
-    const historyFilterDatalist = document.querySelector('.history__filters__datalist');
+    const historyFilterDatalist = document.querySelector('.js-his-filter-activity');
     let activitiesInhistory = [];
 
     historyFilterDatalist.textContent = "";
@@ -76,7 +76,7 @@ const sortHistory = (table) => {
 }
 
 const renderHistory = () => {
-    const historyList = document.querySelector('.history__list');
+    const historyList = document.querySelector('.js-history-list');
     const filteredHistory = filterHistoryByDate(filterHistoryByActivity(history));
 
     sortHistory(filteredHistory);
@@ -98,6 +98,8 @@ const renderSingleHistoryElementDOM = ({ date, activity, activityTimeInSec }) =>
     pActivityName.classList.add('history__activity_name');
     pTime.textContent = moment.utc(time).format("HH:mm:ss")
     pTime.classList.add('history__activity_time')
+    li.classList.add('list__item');
+    li.classList.add('history__list-item');
     li.appendChild(pDate);
     li.appendChild(pActivityName);
     li.appendChild(pTime);

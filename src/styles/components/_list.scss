@@ -1,0 +1,19 @@
+.list {
+    padding-top: $padding-s;
+    font-size: $size-m;
+
+    &__item {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        &:not(:last-of-type) {
+            padding-bottom: $padding-xs;
+        }
+
+        &.active {
+            color: $color-primary-light;
+            font-style: italic;
+        }
+    }
+}

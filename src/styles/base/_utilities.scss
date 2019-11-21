@@ -1,18 +1,17 @@
-* {
-    box-sizing: border-box;
-    font-family: $f-family-basic;
-    margin: 0;
-    padding: 0;
-}
-
 .hidden {
     display: none;
 }
 
 .invisible {
     visibility: hidden;
+    opacity: 0;
+    transition: .3s;
 }
 
 .inactive {
     pointer-events: none
+}
+
+.u-justity-start {
+    justify-content: flex-start !important;
 }

@@ -1,0 +1,70 @@
+.history {
+
+    &__title-box {
+        @include box-title;
+        top: 0;
+        right: 0;
+    }
+
+    &__filters {
+        margin-right: 20px;
+    }
+
+    &__filters-title {
+        color: $color-primary-light;
+        margin-bottom: 5px;
+    }
+
+    &__list {
+        padding-top: 0;
+        max-width: 70rem;
+        font-size: $size-s;
+    }
+
+    &__list-item {
+        background-color: $color-gray-3;
+        padding: $padding-xs;
+        margin-bottom: .5rem;
+        cursor: default;
+    }
+
+    &__list-title {
+        background-color: $color-gray-1;
+        color: $color-primary-light;
+        max-width: 70rem;
+        display: flex;
+        padding: 1rem $padding-xs;
+        margin: 3rem 0 .5rem;
+        font-size: $size-s;
+
+        &--date {
+            flex: 0 0 18rem;
+
+            @include media($breakpoint-xxs) {
+                flex-basis: 30%;
+            }
+        }
+
+        &--name {
+            flex: 1;
+        }
+    }
+
+    &__activity_name {
+        flex: 1;
+        padding-right: $padding-s;
+    }
+
+    &__activity_date {
+        font-size: $size-xs;
+        font-style: italic;
+        color: $color-gray-5;
+        flex: 0 0 18rem;
+        padding-right: $padding-s;
+        word-wrap: wrap;
+
+        @include media($breakpoint-xxs) {
+            flex-basis: 30%;
+        }
+    }
+}

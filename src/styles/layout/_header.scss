@@ -1,0 +1,18 @@
+.header {
+    width: 100vw;
+    height: $header-height;
+    line-height: 50px;
+    padding-right: 10%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $color-primary-superdark;
+    text-transform: uppercase;
+    font-size: $size-l;
+    font-family: 'Permanent Marker', cursive;
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-align: right;
+    z-index: 200;
+    box-shadow: $shadow;
+}

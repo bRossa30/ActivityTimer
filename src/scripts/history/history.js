@@ -1,7 +1,7 @@
-import uuidv4 from 'uuidv4';
+import { uuid } from 'uuidv4';
 import moment from 'moment';
-import { getCurrentActivity } from './activities';
-import { getTime } from './clock';
+import { getCurrentActivity } from '../activities/activities';
+import { getTime } from '../clock/clock';
 
 let history = [];
 
@@ -19,7 +19,7 @@ const getHistory = () => history;
 
 const registerActivityInHistory = () => {
     const historyItem = {
-        id: uuidv4(),
+        id: uuid(),
         date: moment().valueOf(),
         activity: getCurrentActivity().activityName,
         activityTimeInSec: moment.duration(getTime()).asSeconds()

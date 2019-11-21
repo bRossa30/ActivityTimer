@@ -1,9 +1,9 @@
 import { startClock, pauseClock, stopClock, resetClock } from './clock';
-import { getCurrentActivity, disselectAllActivities } from './activities';
-import { toggleDisableSelectActivitySection, renderCurrentActivityTitle } from './render'
-import { renderHistory } from './renderHistory';
-import { showPopup } from './popup';
-import { registerActivityInHistory } from './history';
+import { getCurrentActivity, disselectAllActivities } from '../activities/activities';
+import { toggleDisableSelectActivitySection, renderCurrentActivityTitle } from '../activities/render'
+import { renderHistory } from '../history/historyRender';
+import { showPopup } from '../popup/popup';
+import { registerActivityInHistory } from '../history/history';
 
 
 const btnStart = document.querySelector('.clock__controls--start');
@@ -53,6 +53,8 @@ btnStop.addEventListener('click', () => {
 });
 
 window.addEventListener('beforeunload', () => {
-    stopClock();
-    registerActivityInHistory();
+    if (btnStop.disabled === false) {
+        stopClock();
+        registerActivityInHistory();
+    }
 })

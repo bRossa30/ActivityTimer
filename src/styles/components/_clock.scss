@@ -1,0 +1,50 @@
+.clock {
+    font-size: $size-xl;
+    font-family: $f-family-clock;
+
+    &__controls-box {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__controls {
+        font-weight: 300;
+
+        &--start {
+            @include btn-click($color-secondary);
+        }
+
+        &--reset {
+            @include btn-click($color-primary-dark);
+        }
+
+        &--pause {
+            @include btn-click($color-attention);
+            color: $color-gray-3;
+        }
+
+        &--stop {
+            @include btn-click($color-danger);
+        }
+    }
+
+    &__title {
+        color: $color-primary-light;
+        font-size: $size-m;
+        font-family: $f-family-title;
+        font-style: italic;
+        text-shadow: $text-shadow;
+    }
+}
+
+
+.clock__resize {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: $color-primary-dark;
+    height: 1px;
+    width: 100%;
+    cursor: n-resize;
+}

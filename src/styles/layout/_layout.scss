@@ -1,0 +1,82 @@
+body {
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh;
+
+    @include media($breakpoint-sm) {
+        max-height: auto;
+    }
+}
+
+.container {
+    display: flex;
+    padding-top: $header-height;
+    height: 100vh;
+    position: relative;
+
+    @include media($breakpoint-xs) {
+        flex-direction: column;
+    }
+}
+
+.main {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-clock {
+    padding: $padding-s;
+    background-color: $color-gray-1;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transition: flex .2s;
+    flex: 0 0 45%;
+    max-height: 250px;
+
+    @include media($breakpoint-xs) {
+        flex: 0 0 auto;
+    }
+}
+
+.section-history {
+    background-color: $color-gray-2;
+    padding: $padding-m;
+    flex: 1;
+    position: relative;
+    overflow-y: auto;
+    transition: flex .2s;
+    min-height: 30px;
+
+    @include scrollbar;
+
+    &--collapse {
+        padding: 0;
+        overflow: hidden;
+        flex: 0 0 30px;
+    }
+}
+
+.section-clock.section-history--collapse {
+    flex: 1;
+}
+
+.section-popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    transition: all .3s;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: $padding-l;
+}

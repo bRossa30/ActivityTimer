@@ -1,0 +1,41 @@
+.aside {
+    flex: 0 0 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: $color-gray-3;
+    padding: $padding-s $padding-m;
+    position: relative;
+    border-right: 1px solid $color-primary-dark;
+    transition: .3s;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    @include scrollbar;
+
+    @include media($breakpoint-sm) {
+        flex: 0 0 25%;
+    }
+
+    &--collapse {
+        margin-left: calc(-1 * (35% - 30px));
+        overflow: hidden;
+    }
+
+    &__title {
+        @include box-title;
+        top: 180px;
+        right: 0;
+        transform: rotate(90deg);
+        transform-origin: 0 0;
+
+        &--collapse {
+            transform: rotate(-90deg);
+            transform-origin: 0 100%;
+        }
+    }
+}
+
+.activities__list-box {
+    margin-top: 2rem;
+}

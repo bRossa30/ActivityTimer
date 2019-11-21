@@ -10,29 +10,34 @@
 </head>
 
 <body>
+
     <header class="header">
         <div class="header__title">Activity timer</div>
     </header>
-    <div class="wrapper">
-        <aside class="activities">
-            <div class="aside__title">activities <i class="fas fa-angle-down"></i></div>
+
+    <div class="container">
+
+        <aside class="aside js-section-activities">
+            <div class="aside__title">activities <span class="angle-down">&#10095;</span></div>
             <div class="form__wrapper">
-                <button class="btn btn--large activities__show-form">+</button>
-                <form action="" class="activities__form hidden">
+                <button class="btn btn--round btn--submit js-activities-show-form">+</button>
+                <form action="" class="form invisible js-activities-form ">
                     <input type="text" class="input input--wide" name="activityName" autofocus>
                     <input type="submit" value="add" class="btn btn--submit btn--small">
                     <input type="reset" value="cancel" class="btn btn--cancel btn--small">
                 </form>
             </div>
             <div class="activities__list-box ">
-                <ul class="activities__list"></ul>
+                <ul class="list js-activities"></ul>
             </div>
         </aside>
-        <main>
-            <section class="clock__wrapper">
-                <h3 class="activitiy-title"></h3>
+
+        <main class="main">
+
+            <section class="section-clock">
+                <h3 class="clock__title">&nbsp;</h3>
                 <p class="clock">00:00:00</p>
-                <div class="clock__controls">
+                <div class="clock__controls-box">
                     <button class="btn btn--large clock__controls--start">start</button>
                     <button class="btn btn--large clock__controls--reset hidden">reset</button>
                     <button class="btn btn--large clock__controls--pause " disabled>pause</button>
@@ -40,46 +45,50 @@
                 </div>
                 <div class="clock__resize"></div>
             </section>
-            <section class="history__wrapper">
+
+            <section class="section-history">
                 <div data-simplebar></div>
-                <div class="history-title__box">history <i class="fas fa-angle-down"></i></div>
-                <div class="history__box">
-                    <form class="history__filters__form">
+                <div class="history__title-box">history <span class="angle-down">&#10095;</span></div>
+                <div class="history">
+                    <form class="form__wrapper history__form  u-justity-start">
                         <div class="history__filters">
-                            <p class="history__filters__title">Filter:</p>
-                            <select name="history__filters__datalist" class="input history__filters__datalist"
+                            <p class="history__filters-title">Filter:</p>
+                            <select name="history__filters__datalist" class="input js-his-filter-activity"
                                 placeholder="select activity">
                             </select>
-                            <input type="text" class="input date-picker-start" placeholder="Min date">
+                            <input type="text" class="input date-picker-start js-his-filter-date"
+                                placeholder="Min date">
                         </div>
-                        <div class="history__filters--sort">
-                            <p class="history__filters__title">Sort by:</p>
-                            <select name="history__filters__sortBy" class="input history__filters__sortBy">
+                        <div class="history__sort">
+                            <p class="history__filters-title">Sort by:</p>
+                            <select name="history__filters__sortBy" class="input js-his-filter-sort">
                                 <option value="lastDate" selected>Last date</option>
                                 <option value="erliesDate">Erliest date</option>
                                 <option value="minTime">The shortest activity time</option>
                                 <option value="maxTime">The longest activity time</option>
                             </select>
                         </div>
-
                     </form>
-                    <div class="history__list--wrapper">
-                        <ul class="history__list__title">
-                            <li class="history__list__title--date">Date</li>
-                            <li class="history__list__title--name">Activity</li>
-                            <li class="history__list__title--time">Duration</li>
+                    <div class="history__list-wrapper">
+                        <ul class="list history__list-title">
+                            <li class="history__list-title--date">Date</li>
+                            <li class="history__list-title--name">Activity</li>
+                            <li class="history__list-title--time">Duration</li>
                         </ul>
-                        <ul class="history__list"></ul>
+                        <ul class="list history__list js-history-list"></ul>
                     </div>
                 </div>
             </section>
-            <section class="popup__wrapper hidden">
-                <div class="popup">
-                    <h4 class="popup__title"></h4>
-                    <button class="btn btn--small btn--submit hidden"></button>
-                </div>
-            </section>
+
         </main>
+
+        <section class="section-popup invisible">
+            <div class="popup">
+                <h4 class="popup__title"></h4>
+                <button class="btn btn--small btn--submit "></button>
+            </div>
+        </section>
+
     </div>
     <script src="./scripts/bundle.js"></script>
 </body>

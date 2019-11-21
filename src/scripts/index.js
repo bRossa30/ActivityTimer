@@ -1,12 +1,10 @@
-import '../../node_modules/@fortawesome/fontawesome-free/js/all';
-import './customScrolls';
-import './clockControls';
-import './activitiesForm';
-import './historyForm';
-import './historyEvents';
+import './clock/clockControls';
+import './activities/activitiesForm';
+import './history/historyForm';
+import './layout/layout';
 import '../styles/style.scss';
-import { renderActivities, handleClickActivitySection } from './render';
-import { renderHistory, renderHistoryFilters } from './renderHistory';
+import { renderActivities, handleClickActivitySection } from './activities/render';
+import { renderHistory, renderHistoryFilters } from './history/historyRender';
 
 renderActivities();
 renderHistoryFilters();

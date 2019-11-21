@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Code|Lato|Montserrat:400,700|Permanent+Marker|Open+Sans|Karla&display=swap');
+
+//colors
+
+$color-primary-light: #01EBE6;
+$color-primary-dark: #00AAA6;
+$color-primary-superdark: #008481;
+$color-secondary: #28A745;
+$color-attention: #FFC107;
+$color-danger: #DC3545;
+$color-white: #E1E6EB;
+
+$color-gray-1: #10131c;
+$color-gray-2: #191E2A;
+$color-gray-3: #242F3C;
+$color-gray-4: #3A4C61;
+$color-gray-5: #88919C;
+
+//font familys
+$f-family-default: 'Open Sans',
+sans-serif;
+$f-family-clock: 'Karla',
+monospace;
+$f-family-list: 'Montserrat',
+sans-serif;
+$f-family-title: 'Fira Code',
+monospace;
+
+//sizes
+$size-xs: 1.2rem;
+$size-s: 1.6rem;
+$size-m: 1.8rem;
+$size-l: 2.8rem;
+$size-xl: 5rem;
+
+$btn-height-l: 5rem;
+$btn-height-s: 3rem;
+
+$input-width: 200px;
+$header-height: 50px;
+
+//paddings
+$padding-xs: 2rem;
+$padding-s: 3rem;
+$padding-m: 5rem;
+$padding-l: 10rem;
+$padding-xl: 20rem;
+
+//shadows
+$shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.75);
+$text-shadow: 1px 1px rgba(0, 0, 0, 0.75);
+
+//media queries breakpoints
+$breakpoint-lg: 965px;
+$breakpoint-md: 785px;
+$breakpoint-sm: 654px;
+$breakpoint-xs: 570px;
+$breakpoint-xxs: 400px;

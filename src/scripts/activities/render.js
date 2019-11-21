@@ -1,13 +1,12 @@
 import { getActivities, removeActivity, selectActivity, getCurrentActivity, disselectAllActivities } from './activities';
-import { renderHistoryFilters } from './renderHistory'
+import { renderHistoryFilters } from '../history/historyRender';
 
 
 
 const activities = getActivities();
 
 const renderActivities = () => {
-    const activitiesList = document.querySelector('.activities__list');
-
+    const activitiesList = document.querySelector('.js-activities');
 
     activitiesList.textContent = "";
 
@@ -23,6 +22,7 @@ const renderSingleActivityDOM = (activity) => {
     const buttonRemove = document.createElement('button');
 
     singleActivityLi.setAttribute('id', activity.id);
+    singleActivityLi.classList.add('list__item');
     pActivityName.textContent = activity.activityName;
     buttonRemove.textContent = 'delete';
     buttonRemove.classList.add('btn--remove');
@@ -49,26 +49,25 @@ const renderSingleActivityDOM = (activity) => {
 }
 
 const renderCurrentActivityTitle = () => {
-    const title = document.querySelector('.activitiy-title');
+    const title = document.querySelector('.clock__title');
     const currentActivity = getCurrentActivity();
 
-    title.textContent = '';
+    title.textContent = '\xA0';
     currentActivity && (title.textContent = currentActivity.activityName);
 }
 
 const handleClickActivitySection = () => {
-    const activitySection = document.querySelector('.activities');
+    const activitySection = document.querySelector('.js-section-activities');
 
     activitySection.addEventListener('click', disselectAllActivities, true);
 }
 
 //to disable selecting another activity when click is working
 const toggleDisableSelectActivitySection = () => {
-    const activitySection = document.querySelector('.activities');
+    const activitySection = document.querySelector('.js-section-activities');
 
     activitySection.classList.toggle('inactive')
 }
-
 
 
 export { renderActivities, renderCurrentActivityTitle, toggleDisableSelectActivitySection, handleClickActivitySection }

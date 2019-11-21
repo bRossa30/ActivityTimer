@@ -1,0 +1,51 @@
+.btn {
+    border: none;
+    border-radius: 2px;
+    color: $color-white;
+    font-size: $size-m;
+    margin: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: $shadow;
+    transition: all .3s;
+
+    &:focus {
+        outline: none;
+    }
+
+    &--large {
+        width: 2*$btn-height-l;
+        height: $btn-height-l;
+    }
+
+    &--small {
+        width: 2*$btn-height-l;
+        height: $btn-height-s;
+    }
+
+    &--submit {
+        @include btn-click($color-secondary);
+    }
+
+    &--cancel {
+        @include btn-click($color-danger);
+    }
+
+    &--remove {
+        align-self: flex-start;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        color: lighten($color-gray-2, 40%);
+        font-size: $size-xs;
+        margin-left: 1.5rem;
+        opacity: 1;
+    }
+
+    &--round {
+        border-radius: 50%;
+        width: $btn-height-l;
+        height: $btn-height-l;
+    }
+
+}

@@ -1,5 +1,5 @@
-import uuidv4 from "uuidv4";
-import { showPopup } from './popup';
+import { uuid } from "uuidv4";
+import { showPopup } from '../popup/popup';
 
 let activities = [];
 
@@ -24,7 +24,7 @@ const addActivity = (activityName) => {
         }
     }
     activities.push({
-        id: uuidv4(),
+        id: uuid(),
         activityName,
         selected: false
     });
@@ -42,19 +42,20 @@ const removeActivity = (id) => {
 
 const disselectAllActivities = () => {
     activities.map(a => {
-        if(a.selected===true) {
-            a.selected = false}
-        });
+        if (a.selected === true) {
+            a.selected = false
+        }
+    });
     saveActivityInLocalStorage();
     styleCurrentActivity();
 }
 
 const styleCurrentActivity = () => {
     const currentActivity = getCurrentActivity();
-    const previousLi = document.querySelector('.activities__list li.active');
+    const previousLi = document.querySelector('.js-activities li.active');
     previousLi && previousLi.classList.remove('active');
     if (currentActivity) {
-        const currentLi = document.querySelector(`.activities__list li[id='${currentActivity.id}']`);
+        const currentLi = document.querySelector(`.js-activities li[id='${currentActivity.id}']`);
 
         currentLi && currentLi.classList.add('active');
     }
@@ -67,7 +68,7 @@ const selectActivity = (activity) => {
     styleCurrentActivity();
 }
 
-const getCurrentActivity = () =>  activities.find(a => a.selected === true);
+const getCurrentActivity = () => activities.find(a => a.selected === true);
 
 const getActivities = () => activities;
 
