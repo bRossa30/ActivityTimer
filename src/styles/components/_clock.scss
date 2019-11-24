@@ -36,15 +36,3 @@
         text-shadow: $text-shadow;
     }
 }
-
-
-.clock__resize {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background-color: $color-primary-dark;
-    height: 1px;
-    width: 100%;
-    cursor: n-resize;
-}

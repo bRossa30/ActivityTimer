@@ -38,6 +38,7 @@ body {
     transition: flex .2s;
     flex: 0 0 45%;
     min-height: 28rem;
+    border-bottom: 1px solid $color-primary-dark;
 
     @include media($breakpoint-xs) {
         flex: 0 0 auto;
@@ -67,7 +68,7 @@ body {
 }
 
 .section-popup {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
@@ -79,4 +80,5 @@ body {
     justify-content: center;
     align-items: flex-start;
     padding-top: $padding-l;
+    overflow: hidden;
 }
