@@ -66,9 +66,10 @@ const handleClickActivitySection = () => {
 
 //to disable selecting another activity when click is working
 const toggleDisableSelectActivitySection = () => {
-    const activitySection = document.querySelector('.js-section-activities');
 
-    activitySection.classList.toggle('inactive')
+    document.querySelector('.js-section-activities').classList.toggle('inactive');
+    document.querySelector('.menu-mobile').classList.toggle('inactive');
+
 }
 
 
