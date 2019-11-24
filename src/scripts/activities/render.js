@@ -1,6 +1,7 @@
 import { getActivities, removeActivity, selectActivity, getCurrentActivity, disselectAllActivities } from './activities';
 import { renderHistoryFilters } from '../history/historyRender';
-
+import { asideCollapse } from '../layout/layout';
+import variables from '../../styles/abstracts/_variables.scss';
 
 
 const activities = getActivities();
@@ -35,6 +36,7 @@ const renderSingleActivityDOM = (activity) => {
     })
     singleActivityLi.addEventListener('click', () => {
         selectActivity(activity);
+        window.innerWidth <= variables.xsBreakpoint && asideCollapse();
     })
     buttonRemove.addEventListener('click', (e) => {
         e.stopPropagation(); //stop the action of eventListener at li node

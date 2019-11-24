@@ -1,21 +1,27 @@
 .form {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
     transition: .3s;
 
     &.invisible {
-        transform: scale(.5);
+        position: absolute;
+        top: 0;
+        left: 0;
     }
 
     &__wrapper {
         position: relative;
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
+        flex-wrap: wrap;
 
         @include media($breakpoint-xxs) {
             flex-direction: column;
         }
+    }
+
+    &__item--wide {
+        flex: 1 0 100%;
+        text-align: right;
     }
 }
 

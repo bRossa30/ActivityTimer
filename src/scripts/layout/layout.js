@@ -1,17 +1,47 @@
+import variables from '../../styles/abstracts/_variables.scss';
+
 const title = document.querySelector('.aside__title');
-window.addEventListener('load', () => {
+const aside = document.querySelector('.aside');
+const hamburger = document.querySelector('.menu-mobile');
+
+const changeAsideMargin = () => {
     const margin = title.clientWidth;
-
     title.style.marginRight = - margin + 'px';
+}
 
-
-})
-
-title.addEventListener('click', () => {
+const asideCollapse = () => {
     title.classList.toggle('aside__title--collapse');
-    document.querySelector('.aside').classList.toggle('aside--collapse');
+    aside.classList.toggle('aside--collapse');
+}
 
+const setDisplayHamburger = () => {
+    const xsBeakpoint = variables.xsBreakpoint;
+    if (window.innerWidth <= parseInt(xsBeakpoint)) {
+        hamburger.classList.remove('hidden');
+    } else {
+        hamburger.classList.add('hidden');
+    }
+}
+
+window.addEventListener('load', () => {
+    const xsBeakpoint = variables.xsBreakpoint;
+    changeAsideMargin();
+    setDisplayHamburger();
+    if (window.innerWidth <= parseInt(xsBeakpoint)) {
+        asideCollapse();
+    }
+});
+window.addEventListener('resize', () => {
+    changeAsideMargin();
+    setDisplayHamburger();
+});
+
+title.addEventListener('click', asideCollapse);
+hamburger.addEventListener('click', () => {
+    setDisplayHamburger();
+    asideCollapse();
 })
+
 
 document.querySelector('.history__title-box').addEventListener('click', () => {
     document.querySelector('.section-history').classList.toggle('section-history--collapse');
@@ -20,22 +50,4 @@ document.querySelector('.history__title-box').addEventListener('click', () => {
     document.querySelector('.angle-down').style.transform = 'rotateX(180deg)';
 })
 
-
-
-// document.querySelector('.clock__resize').addEventListener('mousedown', () => {
-
-//     window.addEventListener('mousemove', historyBoxResize)
-// })
-
-// window.addEventListener('mouseup', () => {
-//     document.querySelector('.section-clock').classList.remove('section-clock--grow');
-//     document.querySelector('.section-history').classList.remove('section-history--grow');
-//     window.removeEventListener('mousemove', historyBoxResize)
-// });
-
-// const historyBoxResize = (e) => {
-//     document.querySelector('.section-clock').classList.add('section-clock--grow');
-//     document.querySelector('.section-history').classList.add('section-history--grow');
-//     document.querySelector('.section-history').style.height = window.innerHeight - e.clientY + 'px';
-
-// }
+export { asideCollapse }

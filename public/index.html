@@ -16,11 +16,18 @@
     </header>
 
     <div class="container">
-
+        <div class="menu-mobile hidden">
+            <svg class="icon icon-list menu-mobile__icon">
+                <use xlink:href="icons/sprite.svg#icon-list"></use>
+            </svg>
+        </div>
         <aside class="aside js-section-activities">
+
             <div class="aside__title">activities <span class="angle-down">&#10095;</span></div>
             <div class="form__wrapper">
-                <button class="btn btn--round btn--submit js-activities-show-form">+</button>
+                <div class="form__item--wide">
+                    <button class="btn btn--round btn--submit js-activities-show-form">+</button>
+                </div>
                 <form action="" class="form invisible js-activities-form ">
                     <input type="text" class="input input--wide" name="activityName" autofocus>
                     <input type="submit" value="add" class="btn btn--submit btn--small">
@@ -38,10 +45,18 @@
                 <h3 class="clock__title">&nbsp;</h3>
                 <p class="clock">00:00:00</p>
                 <div class="clock__controls-box">
-                    <button class="btn btn--large clock__controls--start">start</button>
-                    <button class="btn btn--large clock__controls--reset hidden">reset</button>
-                    <button class="btn btn--large clock__controls--pause " disabled>pause</button>
-                    <button class="btn btn--large clock__controls--stop" disabled>stop</button>
+                    <button class="btn btn--large clock__controls--start">
+                        <span>start</span>
+                    </button>
+                    <button class="btn btn--large clock__controls--reset hidden">
+                        <span>reset</span>
+                    </button>
+                    <button class="btn btn--large clock__controls--pause " disabled>
+                        <span>pause</span>
+                    </button>
+                    <button class="btn btn--large clock__controls--stop" disabled>
+                        <span>stop</span>
+                    </button>
                 </div>
                 <div class="clock__resize"></div>
             </section>

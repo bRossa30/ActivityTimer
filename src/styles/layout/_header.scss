@@ -1,7 +1,7 @@
 .header {
     width: 100vw;
     height: $header-height;
-    line-height: 50px;
+    line-height: $header-height;
     padding-right: 10%;
     position: fixed;
     top: 0;

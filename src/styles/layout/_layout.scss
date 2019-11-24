@@ -37,7 +37,7 @@ body {
     justify-content: space-around;
     transition: flex .2s;
     flex: 0 0 45%;
-    max-height: 250px;
+    min-height: 28rem;
 
     @include media($breakpoint-xs) {
         flex: 0 0 auto;

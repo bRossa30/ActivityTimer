@@ -13,14 +13,25 @@
 
     @include scrollbar;
 
-    @include media($breakpoint-sm) {
-        flex: 0 0 25%;
+    @include media($breakpoint-xs) {
+        position: absolute;
+        top: $header-height;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
     }
 
     &--collapse {
         margin-left: calc(-1 * (35% - 30px));
         overflow: hidden;
+
+        @include media($breakpoint-xs) {
+            width: 0;
+            height: 0;
+        }
     }
+
 
     &__title {
         @include box-title;
@@ -29,13 +40,33 @@
         transform: rotate(90deg);
         transform-origin: 0 0;
 
+        @include media($breakpoint-xs) {
+            top: 0;
+            left: 3rem;
+            width: 100vh;
+            text-align: center;
+
+
+            .angle-down {
+                transform: rotate(-90deg);
+            }
+        }
+
         &--collapse {
             transform: rotate(-90deg);
             transform-origin: 0 100%;
+
+            @include media($breakpoint-xs) {
+                display: none;
+            }
         }
     }
 }
 
 .activities__list-box {
     margin-top: 2rem;
+
+    @include media($breakpoint-xs) {
+        padding-left: $padding-m;
+    }
 }

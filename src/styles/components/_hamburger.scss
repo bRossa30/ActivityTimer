@@ -1,0 +1,18 @@
+.menu-mobile {
+    position: fixed;
+    top: $header-height + $padding-s;
+    left: $padding-xs;
+    // background-color: $color-primary-dark;
+    // height: 4rem;
+    // width: 4rem;
+    // border-radius: 2px;
+    z-index: 1000;
+
+    &__icon {
+        height: 3rem;
+        width: 3rem;
+        fill: $color-primary-dark;
+    }
+
+
+}
